@@ -1,5 +1,8 @@
 {
-  "name": "audit-desensitizer",
+  "name": "ai-data-desensitizer",
+  "description": "AI智能脱敏工具 - 支持PDF、Word、Excel文档的敏感信息智能检测与脱敏",
+  "author": "34xiaoli",
+  "license": "MIT",
   "private": true,
   "version": "1.0.0",
   "type": "module",

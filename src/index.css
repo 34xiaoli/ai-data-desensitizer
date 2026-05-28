@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f4f8;
+  color: #243b53;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f4f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bcccdc;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #829ab1;
+}
+
+/* 敏感信息高亮标记 */
+.sensitive-highlight {
+  border-radius: 3px;
+  padding: 1px 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.sensitive-highlight:hover {
+  filter: brightness(0.9);
+}
+
+.sensitive-highlight.id-card {
+  background-color: #ffcdd2;
+  border-bottom: 2px solid #e53935;
+}
+
+.sensitive-highlight.phone {
+  background-color: #bbdefb;
+  border-bottom: 2px solid #1e88e5;
+}
+
+.sensitive-highlight.bank-card {
+  background-color: #c8e6c9;
+  border-bottom: 2px solid #43a047;
+}
+
+.sensitive-highlight.email {
+  background-color: #fff9c4;
+  border-bottom: 2px solid #fdd835;
+}
+
+.sensitive-highlight.credit-code {
+  background-color: #e1bee7;
+  border-bottom: 2px solid #8e24aa;
+}
+
+.sensitive-highlight.amount {
+  background-color: #ffe0b2;
+  border-bottom: 2px solid #fb8c00;
+}
+
+.sensitive-highlight.name {
+  background-color: #b2dfdb;
+  border-bottom: 2px solid #00897b;
+}
+
+/* 脱敏标记样式 */
+.desensitized-mark {
+  background-color: #eceff1;
+  text-decoration: line-through;
+  color: #90a4ae;
+  padding: 1px 3px;
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.desensitized-mark .replacement {
+  text-decoration: none;
+  color: #37474f;
+  font-weight: 500;
+}
+
+/* 交互式取消脱敏 - hover时显示恢复图标和底色 */
+.desensitized-mark.interactive-restore:hover {
+  background-color: #e8f5e9;
+  border-bottom: 2px solid #66bb6a;
+}
+
+.desensitized-mark.interactive-restore:hover .replacement {
+  color: #2e7d32;
+}
+
+.desensitized-mark.interactive-restore:hover .restore-icon {
+  opacity: 1 !important;
+}
+
+/* 双栏对比视图同步滚动 */
+.compare-pane {
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* 文档内容区域 */
+.document-content {
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-size: 14px;
+}
+
+/* 操作菜单弹出层 */
+.context-menu {
+  position: absolute;
+  z-index: 1000;
+  min-width: 160px;
+}
